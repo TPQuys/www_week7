@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thống kê order theo thời gian</title>
+    <style>
+        td,table {
+            border-collapse: collapse;
+            border:solid;
+        }
+    </style>
+</head>
+<body>
+    <table >
+        <tr>
+            <td>Khách hàng</td>
+            <td>Nhân viên</td>
+            <td>Thời gian</td>
+            <td>Sản phẩm</td>
+        </tr>
+        <span th:each="order : ${orders}">
+        <tr>
+            <td  th:text="${order.getCustomer().getName()}"></td>
+            <td th:text="${order.getEmployee().getFullname()}"></td>
+            <td  th:text="${order.getOrderDate()}"></td>
+            <td th:each="orderDetail: ${order.getOrderDetails()}">
+                <span th:text="${orderDetail.getProduct().getName()}"></span>
+            </td>
+        </tr>
+        </span>
+    </table>
+</body>
+</html>

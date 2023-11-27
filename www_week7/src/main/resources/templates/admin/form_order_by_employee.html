@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thống kê order theo nhân viên</title>
+</head>
+<body>
+<h1>Thống kê sản phẩm theo nhân viên</h1>
+<form th:action="@{/admin/order_by_employee}" style="display:block">
+    <select  name="employee_id">
+        <span th:each=" employee: ${employees}">
+        <option th:text="${employee.getFullname()}" th:value="${employee.getId()}"></option>
+        </span>
+    </select>
+    Chọn mốc thời gian:
+    <div style="margin: 20px 0">
+        Từ:
+        <input  type="datetime-local" name="from" required>
+        Đến:
+        <input type="datetime-local" name="to" required>
+    </div>
+    <button type="submit">Thống kê</button>
+</form>
+</body>
+</html>

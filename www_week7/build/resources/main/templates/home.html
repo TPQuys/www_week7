@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ</title>
+</head>
+<body>
+<h1>Trang chủ</h1>
+<div th:each="product: ${products}">
+    <div>
+        <h3>Tên sản phẩm: <san th:text="${product.getName()}"></san></h3>
+        <p >Mô tả: <span th:text="${product.getDescription()}"></span>
+    </div>
+    <hr>
+</div>
+</body>
+</html>

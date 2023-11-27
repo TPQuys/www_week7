@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thống kê order theo thời gian</title>
+</head>
+<body>
+<h1>Thống kê sản phẩm theo thời gian</h1>
+<form th:action="@{/admin/order_by_time}" style="display:block">
+    Chọn mốc thời gian:
+    <div style="margin: 20px 0">
+        Từ:
+        <input  type="datetime-local" name="from" required>
+        Đến:
+        <input type="datetime-local" name="to" required>
+    </div>
+    <button type="submit">Thống kê</button>
+</form>
+</body>
+</html>
